@@ -21,5 +21,7 @@ public interface UserService {
 
     void deleteById(Long id);
 
-     void addAudiosByIdForUser (Long userId, List<Long> audiosId);
+    void changeCityIdToNull(Long cityId);
+
+    void changeAuthorIdToNull(Long authorId);
 }

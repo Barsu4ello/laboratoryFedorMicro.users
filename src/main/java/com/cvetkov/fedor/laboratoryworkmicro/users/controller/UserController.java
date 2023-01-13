@@ -57,9 +57,15 @@ public class UserController {
         userService.deleteById(id);
     }
 
-    @PostMapping("/add-audio")
+    @PutMapping("/change-city-id/{cityId}")
     // @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
-    public void addAudiosForUser(@Valid @RequestBody UserAndAudioRequest request) {
-        userService.addAudiosByIdForUser(request.getUserId(), request.getAudiosId());
+    public void changeCityIdToNull(@PathVariable Long cityId) {
+        userService.changeCityIdToNull(cityId);
+    }
+
+    @PutMapping("/change-author-id/{authorId}")
+    // @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
+    public void changeAuthorIdToNull(@PathVariable Long authorId) {
+        userService.changeAuthorIdToNull(authorId);
     }
 }
