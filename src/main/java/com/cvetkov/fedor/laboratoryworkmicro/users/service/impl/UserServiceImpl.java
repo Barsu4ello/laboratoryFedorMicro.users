@@ -10,9 +10,7 @@ import com.cvetkov.fedor.laboratoryworkmicro.users.feign.ConcertFeignClient;
 import com.cvetkov.fedor.laboratoryworkmicro.users.repository.UserRepository;
 import com.cvetkov.fedor.laboratoryworkmicro.users.service.UserService;
 import com.cvetkov.fedor.laboratoryworkmicro.utils.enums.UserStatus;
-import com.cvetkov.fedor.laboratoryworkmicro.utils.exception.ExceptionResponseStatusChecker;
 import com.cvetkov.fedor.laboratoryworkmicro.utils.exception.ObjectNotFoundException;
-import feign.FeignException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -112,5 +110,6 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public void changeAuthorIdToNull(Long authorId) {
         userRepository.setAuthorIdToNullByCityId(authorId);
+//        return Mono.empty();
     }
 }
